@@ -1,7 +1,6 @@
 package com.barbearia.agenda.model;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,8 +10,7 @@ public class Agendamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String cliente;
-    private LocalDate data;
-    private LocalTime horario;
+    private LocalDateTime dataHorario;
 
     public Agendamento () {}
 
@@ -28,19 +26,11 @@ public class Agendamento {
         this.cliente = cliente;
     }
 
-    public LocalDate getData() {
-        return data;
+    public LocalDateTime getDataHorario() {
+        return dataHorario;
     }
 
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-
-    public LocalTime getHorario() {
-        return horario;
-    }
-
-    public void setHorario(LocalTime horario) {
-        this.horario = horario;
+    public void setDataHorario(LocalDateTime dataHorario) {
+        this.dataHorario = dataHorario;
     }
 }
