@@ -21,6 +21,8 @@ public class AgendamentoController {
 
     @PostMapping
     public Agendamento agendar(@RequestBody Agendamento agendamento) {
+        System.out.println("Data recebida no backend: " + agendamento.getData());
+        System.out.println("Horário recebido no backend: " + agendamento.getHorario());
         return agendamentoService.agendar(agendamento);
     }
 }
